@@ -11,12 +11,44 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
         <div class="container">
           <div class="row">
             <div class="col-sm-12 col-md-6 col-lg-3 col-xl-5 footer-widget footer-widget-about">
-              <h6 class="footer-widget-title">About Amarou</h6>
+              <h6 class="footer-widget-title">
+                <?$APPLICATION->IncludeComponent(
+                      "bitrix:main.include",
+                      "",
+                      Array(
+                      "AREA_FILE_SHOW" => "file",
+                      "AREA_FILE_SUFFIX" => "inc",
+                      "EDIT_TEMPLATE" => "",
+                      "PATH" => SITE_TEMPLATE_PATH . "/includes/about-head.php"
+                    )
+                  );?>
+              </h6>
               <div class="footer-widget-content">
-                <p class="mb-20">A leading developer of A-grade commercial, industrial and residential projects in USA.
-                  Since its foundation the company has doubled its turnover year on year with its staff.</p>
+                <p class="mb-20">
+                  <?$APPLICATION->IncludeComponent(
+                      "bitrix:main.include",
+                      "",
+                      Array(
+                      "AREA_FILE_SHOW" => "file",
+                      "AREA_FILE_SUFFIX" => "inc",
+                      "EDIT_TEMPLATE" => "",
+                      "PATH" => SITE_TEMPLATE_PATH . "/includes/about.php"
+                    )
+                  );?>
+                </p>
                 <a href="request-quote.html" class="btn btn__primary btn__link ">
-                  <i class="icon-arrow-right"></i><span>Request A Quote</span>
+                  <i class="icon-arrow-right"></i><span>
+                    <?$APPLICATION->IncludeComponent(
+                      "bitrix:main.include",
+                      "",
+                      Array(
+                      "AREA_FILE_SHOW" => "file",
+                      "AREA_FILE_SUFFIX" => "inc",
+                      "EDIT_TEMPLATE" => "",
+                      "PATH" => SITE_TEMPLATE_PATH . "/includes/request.php"
+                    )
+                  );?>
+                  </span>
                 </a>
               </div>
             </div><!-- /.col-xl-4 -->
@@ -51,17 +83,68 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
               </div><!-- /.footer-widget-content -->
             </div><!-- /.col-xl-2 -->
             <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 footer-widget footer-widget-contact">
-              <h6 class="footer-widget-title">Quick Contact</h6>
+              <h6 class="footer-widget-title">
+                <?$APPLICATION->IncludeComponent(
+                      "bitrix:main.include",
+                      "",
+                      Array(
+                      "AREA_FILE_SHOW" => "file",
+                      "AREA_FILE_SUFFIX" => "inc",
+                      "EDIT_TEMPLATE" => "",
+                      "PATH" => SITE_TEMPLATE_PATH . "/includes/contact-head.php"
+                    )
+                  );?>
+              </h6>
               <div class="footer-widget-content">
-                <p class="mb-20">If you have any questions or need help, feel free to contact with our team.</p>
+                <p class="mb-20">
+                  <?$APPLICATION->IncludeComponent(
+                      "bitrix:main.include",
+                      "",
+                      Array(
+                      "AREA_FILE_SHOW" => "file",
+                      "AREA_FILE_SUFFIX" => "inc",
+                      "EDIT_TEMPLATE" => "",
+                      "PATH" => SITE_TEMPLATE_PATH . "/includes/contact-text.php"
+                    )
+                  );?>
+                </p>
                 <a class="contact-number contact-number-white d-flex align-items-center mb-20" href="tel:5565454117">
-                  <i class="icon-phone"></i><span>(002) 55 654 541 17</span>
+                  <i class="icon-phone"></i><span> 
+                    <?$APPLICATION->IncludeComponent(
+                      "bitrix:main.include",
+                      "",
+                      Array(
+                      "AREA_FILE_SHOW" => "file",
+                      "AREA_FILE_SUFFIX" => "inc",
+                      "EDIT_TEMPLATE" => "",
+                      "PATH" => SITE_TEMPLATE_PATH . "/includes/phone-full.php"
+                    )
+                  );?>
+                  </span>
                 </a><!-- /.contact__numbr -->
-                <p class="mb-30">2307 Beverley Rd Brooklyn, New York 11226 United States.</p>
+                <p class="mb-30">
+                  <?$APPLICATION->IncludeComponent(
+                      "bitrix:main.include",
+                      "",
+                      Array(
+                      "AREA_FILE_SHOW" => "file",
+                      "AREA_FILE_SUFFIX" => "inc",
+                      "EDIT_TEMPLATE" => "",
+                      "PATH" => SITE_TEMPLATE_PATH . "/includes/address.php"
+                    )
+                  );?>
+                </p>
                 <ul class="social-icons list-unstyled">
-                  <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                  <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                  <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                  <?$APPLICATION->IncludeComponent(
+                    "bitrix:main.include",
+                    "",
+                    Array(
+                    "AREA_FILE_SHOW" => "file",
+                    "AREA_FILE_SUFFIX" => "inc",
+                    "EDIT_TEMPLATE" => "",
+                    "PATH" => SITE_TEMPLATE_PATH . "/includes/social.php"
+                    )
+                  );?>
                 </ul><!-- /.social-icons -->
               </div><!-- /.footer-widget-content -->
             </div><!-- /.col-xl-4 -->
@@ -72,8 +155,17 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
         <div class="container">
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12 text-center">
-              <p class="mb-0"> &copy; 2020 Amarou. With Love by
-                <a href="http://themeforest.net/user/7oroof">7oroof.com</a>
+              <p class="mb-0">
+                <?$APPLICATION->IncludeComponent(
+                      "bitrix:main.include",
+                      "",
+                      Array(
+                      "AREA_FILE_SHOW" => "file",
+                      "AREA_FILE_SUFFIX" => "inc",
+                      "EDIT_TEMPLATE" => "",
+                      "PATH" => SITE_TEMPLATE_PATH . "/includes/copyright.php"
+                    )
+                  );?>
               </p>
             </div><!-- /.col-lg-12 -->
           </div><!-- /.row -->

@@ -209,7 +209,18 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
           <div class="header-actions d-flex align-items-center">
             <button type="button" class="action-btn__search"><i class="fas fa-search"></i></button>
             <a href="request-quote.html" class="btn btn__primary action-btn__request">
-              <span>Request A Quote</span><i class="icon-arrow-right"></i>
+              <span>
+                <?$APPLICATION->IncludeComponent(
+                      "bitrix:main.include",
+                      "",
+                      Array(
+                      "AREA_FILE_SHOW" => "file",
+                      "AREA_FILE_SUFFIX" => "inc",
+                      "EDIT_TEMPLATE" => "",
+                      "PATH" => SITE_TEMPLATE_PATH . "/includes/request.php"
+                    )
+                  );?>
+              </span><i class="icon-arrow-right"></i>
             </a>
           </div>
         </div><!-- /.container -->

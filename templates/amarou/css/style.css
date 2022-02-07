@@ -6205,6 +6205,16 @@ textarea.form-control {
   font-size: 14px;
 }
 
+.contact-panel__info .contact-panel__block__list li a {
+  color: #9b9b9b;
+}
+
+.contact-panel__info .contact-panel__block__list li a:hover,
+.contact-panel__info .contact-panel__block__list li a:focus {
+  color: #ff4c01;
+  text-decoration: underline;
+}
+
 .contact-panel__info .btn {
   margin-top: 12px;
 }

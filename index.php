@@ -1098,10 +1098,33 @@ $APPLICATION->SetTitle('Главная');
          contact layout3
     =========================  -->
     <section class="contact-layout3 py-0">
-      <div id="map" style="height: 620px;"></div>
-      <script src="assets/js/google-map.js"></script>
-      <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
-      <!-- CLICK HERE (https://developers.google.com/maps/documentation/embed/get-api-key) TO  LERAN MORE ABOUT GOOGLE MAPS API KEY -->
+      <div id="map" style="height: 620px;">
+        <?$APPLICATION->IncludeComponent(
+          "bitrix:map.yandex.view", 
+          ".default", 
+          array(
+            "API_KEY" => "",
+            "COMPONENT_TEMPLATE" => ".default",
+            "CONTROLS" => array(
+              0 => "ZOOM",
+              1 => "MINIMAP",
+              2 => "TYPECONTROL",
+              3 => "SCALELINE",
+            ),
+            "INIT_MAP_TYPE" => "MAP",
+            "MAP_DATA" => "a:4:{s:10:\"yandex_lat\";d:40.699306141186554;s:10:\"yandex_lon\";d:-73.95707725778041;s:12:\"yandex_scale\";i:14;s:10:\"PLACEMARKS\";a:1:{i:0;a:3:{s:3:\"LON\";d:-73.9673769403979;s:3:\"LAT\";d:40.69617489119925;s:4:\"TEXT\";s:13:\"Amarou Office\";}}}",
+            "MAP_HEIGHT" => "620",
+            "MAP_ID" => "",
+            "MAP_WIDTH" => "100%",
+            "OPTIONS" => array(
+              0 => "ENABLE_SCROLL_ZOOM",
+              1 => "ENABLE_DBLCLICK_ZOOM",
+              2 => "ENABLE_DRAGGING",
+            )
+          ),
+          false
+        );?>
+      </div>
       <div class="container">
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-4 offset-lg-8">
@@ -1109,25 +1132,99 @@ $APPLICATION->SetTitle('Главная');
               <div class="contact-panel__block">
                 <h5 class="contact-panel__block__title">Our Location</h5>
                 <ul class="contact-panel__block__list list-unstyled">
-                  <li>2307 Beverley Rd Brooklyn, New York 11226 United States.</li>
+                  <li>
+                    <?$APPLICATION->IncludeComponent(
+                      "bitrix:main.include",
+                      "",
+                      Array(
+                      "AREA_FILE_SHOW" => "file",
+                      "AREA_FILE_SUFFIX" => "inc",
+                      "EDIT_TEMPLATE" => "",
+                      "PATH" => SITE_TEMPLATE_PATH . "/includes/address.php"
+                    )
+                  );?>
+                  </li>
                 </ul>
               </div><!-- /.contact-panel__info__block -->
               <div class="contact-panel__block">
-                <h5 class="contact-panel__block__title">Quick Contact</h5>
+                <h5 class="contact-panel__block__title">
+                  <?$APPLICATION->IncludeComponent(
+                      "bitrix:main.include",
+                      "",
+                      Array(
+                      "AREA_FILE_SHOW" => "file",
+                      "AREA_FILE_SUFFIX" => "inc",
+                      "EDIT_TEMPLATE" => "",
+                      "PATH" => SITE_TEMPLATE_PATH . "/includes/contact-head.php"
+                    )
+                  );?>
+                </h5>
                 <ul class="contact-panel__block__list list-unstyled">
-                  <li><a href="mailto:Amarou@7oroof.com"></a>Email: Amarou@7oroof.com</li>
-                  <li><a href="tel:01061245741"></a>Call Us: (002) 01061245741</li>
+                  <li>Email: 
+                    <?$APPLICATION->IncludeComponent(
+                        "bitrix:main.include",
+                        "",
+                        Array(
+                        "AREA_FILE_SHOW" => "file",
+                        "AREA_FILE_SUFFIX" => "inc",
+                        "EDIT_TEMPLATE" => "",
+                        "PATH" => SITE_TEMPLATE_PATH . "/includes/email.php"
+                      )
+                    );?>  
+                  </li>
+                  <li>
+                    <?$APPLICATION->IncludeComponent(
+                        "bitrix:main.include",
+                        "",
+                        Array(
+                        "AREA_FILE_SHOW" => "file",
+                        "AREA_FILE_SUFFIX" => "inc",
+                        "EDIT_TEMPLATE" => "",
+                        "PATH" => SITE_TEMPLATE_PATH . "/includes/phone-add.php"
+                      )
+                    );?>
+                  </li>
                 </ul>
               </div><!-- /.contact-panel__info__block -->
               <div class="contact-panel__block">
-                <h5 class="contact-panel__block__title">Opening Hours</h5>
+                <h5 class="contact-panel__block__title">
+                  <?$APPLICATION->IncludeComponent(
+                      "bitrix:main.include",
+                      "",
+                      Array(
+                      "AREA_FILE_SHOW" => "file",
+                      "AREA_FILE_SUFFIX" => "inc",
+                      "EDIT_TEMPLATE" => "",
+                      "PATH" => SITE_TEMPLATE_PATH . "/includes/working-hours-head.php"
+                    )
+                  );?>
+                </h5>
                 <ul class="contact-panel__block__list list-unstyled">
-                  <li>Monday - Friday</li>
-                  <li>09:00 AM - 06:00 PM</li>
+                  <?$APPLICATION->IncludeComponent(
+                      "bitrix:main.include",
+                      "",
+                      Array(
+                      "AREA_FILE_SHOW" => "file",
+                      "AREA_FILE_SUFFIX" => "inc",
+                      "EDIT_TEMPLATE" => "",
+                      "PATH" => SITE_TEMPLATE_PATH . "/includes/working-hours-full.php"
+                    )
+                  );?>
                 </ul>
               </div><!-- /.contact-panel__info__block -->
               <a href="contacs.html" class="btn btn__primary btn__block">
-                <i class="icon-arrow-right"></i><span>Request A Quote</span>
+                <i class="icon-arrow-right"></i><span>
+                  <?$APPLICATION->IncludeComponent(
+                      "bitrix:main.include",
+                      "",
+                      Array(
+                      "AREA_FILE_SHOW" => "file",
+                      "AREA_FILE_SUFFIX" => "inc",
+                      "EDIT_TEMPLATE" => "",
+                      "PATH" => SITE_TEMPLATE_PATH . "/includes/request.php"
+                    )
+                  );?>
+                </span>
               </a>
             </div>
           </div><!-- /.col-lg-12 -->
